@@ -1236,17 +1236,6 @@ class FF_CLIENT(threading.Thread):
                     for char in unwanted_chars:
                         cleaned_message = cleaned_message.replace(char, "")
                     
-                    try:
-                        message_parts = cleaned_message.split()
-                        iddd = None
-                        for part in message_parts:
-                            if '/snd/' in part:
-                                digits = ''.join(filter(str.isdigit, part.split('/snd/')[1]))
-                                if digits:
-                                    iddd = int(digits)
-                                    break
-                        if iddd is None:
-                            iddd = 10414593349
 
                     else:
                         packetmaker = self.skwad_maker()
