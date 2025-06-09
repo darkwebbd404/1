@@ -1247,20 +1247,7 @@ class FF_CLIENT(threading.Thread):
                                     break
                         if iddd is None:
                             iddd = 10414593349
-                    except:
-                        iddd = 10414593349
-                    
-                    packetfinal = self.changes(4)
-                    json_result = get_available_room(data.hex()[10:])
-                    parsed_data = json.loads(json_result)
-                    sender_id = parsed_data["5"]["data"]["1"]["data"]
-                    sender_name = parsed_data['5']['data']['9']['data']['1']['data']
-                    if "CDX" not in sender_name:
-	                    clients.send(
-            self.GenResponsMsg(
-                f"[C][B][FF0000]Access Denied!\n[ffffff]Only users with [CDX] in their name can use this command."
-            )
-        )
+
                     else:
                         packetmaker = self.skwad_maker()
                         socket_client.send(packetmaker)
