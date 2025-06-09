@@ -1227,41 +1227,41 @@ class FF_CLIENT(threading.Thread):
                 else:
                     pass
 ####################################
-            #SEND SKWAD 5 TO ID ->> COMMAND
-            if "1200" in data.hex()[0:4] and b"/snd/" in data:
-                try:
-                    message = data.decode('utf-8', errors='ignore')
-                    unwanted_chars = ["(J,", "(J@", "(", ")", "@", ","]
-                    cleaned_message = message
-                    for char in unwanted_chars:
-                        cleaned_message = cleaned_message.replace(char, "")
-                    
-                    try:
-                        message_parts = cleaned_message.split()
-                        iddd = None
-                        for part in message_parts:
-                            if '/snd/' in part:
-                                digits = ''.join(filter(str.isdigit, part.split('/snd/')[1]))
-                                if digits:
-                                    iddd = int(digits)
-                                    break
-                        if iddd is None:
-                            iddd = 10414593349
-                    except:
-                        iddd = 10414593349
-                    
-                    packetfinal = self.changes(4)
-                    json_result = get_available_room(data.hex()[10:])
-                    parsed_data = json.loads(json_result)
-                    sender_id = parsed_data["5"]["data"]["1"]["data"]
-                    sender_name = parsed_data['5']['data']['9']['data']['1']['data']
-                    if "" not in sender_name:
-	                    clients.send(
-            self.GenResponsMsg(
-                f"[C][B][FF0000]Access Denied!\n[ffffff]Only users with [CDX] in their name can use this command."
-            )
-        )
-                    else:
+       		 # SEND SKWAD 5 TO ID ->> COMMAND
+if "1200" in data.hex()[0:4] and b"/snd/" in data:
+    try:
+        message = data.decode('utf-8', errors='ignore')
+        unwanted_chars = ["(J,", "(J@", "(", ")", "@", ","]
+        cleaned_message = message
+        for char in unwanted_chars:
+            cleaned_message = cleaned_message.replace(char, "")
+        
+        try:
+            message_parts = cleaned_message.split()
+            iddd = None
+            for part in message_parts:
+                if '/snd/' in part:
+                    digits = ''.join(filter(str.isdigit, part.split('/snd/')[1]))
+                    if digits:
+                        iddd = int(digits)
+                        break
+            if iddd is None:
+                iddd = 10414593349  # Default ID if parsing fails
+        except:
+            iddd = 10414593349  # Fallback ID on error
+        
+        packetfinal = self.changes(4)
+        json_result = get_available_room(data.hex()[10:])
+        parsed_data = json.loads(json_result)
+        sender_id = parsed_data["5"]["data"]["1"]["data"]
+        sender_name = parsed_data['5']['data']['9']['data']['1']['data']
+        
+        # (Removed the [CDX] name check here)
+        # Proceed with the command without restrictions
+        
+    except Exception as e:
+        print(f"Error processing /snd/ command: {e}") 
+    else:
                         packetmaker = self.skwad_maker()
                         socket_client.send(packetmaker)
                         sleep(1)
