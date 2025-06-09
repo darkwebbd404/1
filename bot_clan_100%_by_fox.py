@@ -1247,7 +1247,7 @@ class FF_CLIENT(threading.Thread):
                         uid = parsed_data["5"]["data"]["1"]["data"]
                         iddd = fix_num(iddd)
                         clients.send(self.GenResponsMsg(f"""
-                [11EAFD][b][c]
+                [11EAFD][b][c
                 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
                 تم فتح سكواد 5 الى الاعب : 
                 {iddd}
