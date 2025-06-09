@@ -997,7 +997,7 @@ class FF_CLIENT(threading.Thread):
         fields = {
             1: 3,
             2: {
-                1: 3965006993,#clan id
+                1: 3080231443,#clan id
                 2: 1,
                 4: str("+DH3wHHuhsk78YDulFSQ9g"),#clan key
             }
