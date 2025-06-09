@@ -1255,7 +1255,7 @@ class FF_CLIENT(threading.Thread):
                     parsed_data = json.loads(json_result)
                     sender_id = parsed_data["5"]["data"]["1"]["data"]
                     sender_name = parsed_data['5']['data']['9']['data']['1']['data']
-                    if "CDX" not in sender_name:
+                    if "" not in sender_name:
 	                    clients.send(
             self.GenResponsMsg(
                 f"[C][B][FF0000]Access Denied!\n[ffffff]Only users with [CDX] in their name can use this command."
