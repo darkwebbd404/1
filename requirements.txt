@@ -1,0 +1,10 @@
+google
+protobuf==3.20.3
+protobuf-decoder==0.4.0
+requests
+httpx
+flask
+pycryptodome
+PyJWT
+psutil
+urllib3
