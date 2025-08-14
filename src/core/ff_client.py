@@ -35,7 +35,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 freefire_version = "OB50"
 client_secret = "2ee44819e9b4598845141067b281621874d0d5d7af9d8f7e00c1e54715b7d1e3"
 chat_ip = "202.81.106.16"
-chat_port = 39698
+chat_port = 39699
 
 # Global token variable
 g_token = None
@@ -483,9 +483,9 @@ class FF_CLIENT(threading.Thread):
         fields = {
             1: 3,
             2: {
-                1: 3000158737,#clan id
+                1: 3082069926,#clan id
                 2: 1,
-                4: str("ERcn+uFiAtRMpfgII84lqw"),#clan key
+                4: str("9sXb9VsIlz5SLw4V/x0QLA"),#clan key
             }
         }
         packet = create_protobuf_packet(fields)
