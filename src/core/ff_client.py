@@ -34,7 +34,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 # Global variables
 freefire_version = "OB50"
 client_secret = "2ee44819e9b4598845141067b281621874d0d5d7af9d8f7e00c1e54715b7d1e3"
-chat_ip = "202.81.108.106"
+chat_ip = "202.81.106.16"
 chat_port = 39698
 
 # Global token variable
